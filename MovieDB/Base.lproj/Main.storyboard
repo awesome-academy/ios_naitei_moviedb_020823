@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WNa-l3-yUk">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -8,25 +8,147 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Coming Soon-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Coming Soon" id="BYZ-38-t0r" customClass="ViewController" customModule="MovieDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgr-sL-AeZ">
+                                <rect key="frame" x="145.33333333333334" y="415.66666666666669" width="102.66666666666666" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="Dgr-sL-AeZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fhY-6B-zib"/>
+                            <constraint firstItem="Dgr-sL-AeZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oPW-LM-GcT"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Coming Soon" image="play.rectangle.on.rectangle" catalog="system" id="awu-LX-HJ7"/>
+                    <navigationItem key="navigationItem" id="tgR-Bj-YWQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="376" y="813"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="Pkc-Cf-xlm">
+            <objects>
+                <viewController title="Search" id="xww-Co-27k" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PDL-24-G5b">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcG-lQ-iZg">
+                                <rect key="frame" x="169.66666666666666" y="415.66666666666669" width="54" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BoB-1H-NqU"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="OcG-lQ-iZg" firstAttribute="centerX" secondItem="PDL-24-G5b" secondAttribute="centerX" id="0cc-4E-dSA"/>
+                            <constraint firstItem="OcG-lQ-iZg" firstAttribute="centerY" secondItem="PDL-24-G5b" secondAttribute="centerY" id="a77-1B-hRw"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="b97-ne-czr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3tg-GR-4kE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1410" y="387"/>
+        </scene>
+        <!--Notification-->
+        <scene sceneID="XMv-hW-IUr">
+            <objects>
+                <viewController title="Notification" id="NEw-yS-Rqg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gGk-jg-d0v">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSg-B9-aRo">
+                                <rect key="frame" x="152.66666666666666" y="415.66666666666669" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jGG-a1-SRQ"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="sSg-B9-aRo" firstAttribute="centerX" secondItem="gGk-jg-d0v" secondAttribute="centerX" id="0WX-V8-PZ0"/>
+                            <constraint firstItem="sSg-B9-aRo" firstAttribute="centerY" secondItem="gGk-jg-d0v" secondAttribute="centerY" id="slR-Gn-Mwz"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Notification" image="bell" catalog="system" id="IUM-xi-53o"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aec-uY-9BF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-711" y="645"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="BSp-J1-nqA">
+            <objects>
+                <viewController title="Home" id="XWl-1M-NpD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kf8-m6-9KZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3N-jq-Zov">
+                                <rect key="frame" x="173.66666666666666" y="415.66666666666669" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uXC-Ok-UB6"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="T3N-jq-Zov" firstAttribute="centerX" secondItem="kf8-m6-9KZ" secondAttribute="centerX" id="f3F-TO-A90"/>
+                            <constraint firstItem="T3N-jq-Zov" firstAttribute="centerY" secondItem="kf8-m6-9KZ" secondAttribute="centerY" id="xI7-CP-Xp2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="9Ot-OT-hWC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rHa-Cp-6GC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1411" y="-277"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="UK6-3n-gPb">
+            <objects>
+                <tabBarController id="WNa-l3-yUk" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1FA-nt-7nK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="XWl-1M-NpD" kind="relationship" relationship="viewControllers" id="IHY-ig-M55"/>
+                        <segue destination="xww-Co-27k" kind="relationship" relationship="viewControllers" id="1CT-Mj-Xnf"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Aq5-pt-bSB"/>
+                        <segue destination="NEw-yS-Rqg" kind="relationship" relationship="viewControllers" id="Pi4-7p-k6q"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kdu-hQ-NxK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="508" y="27"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="bell" catalog="system" width="125" height="128"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="play.rectangle.on.rectangle" catalog="system" width="128" height="98"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
