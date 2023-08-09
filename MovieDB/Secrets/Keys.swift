@@ -38,5 +38,3 @@ class ProductKeys: BaseKeys, APIKeyable {
         return token
    }
 }
-
-
