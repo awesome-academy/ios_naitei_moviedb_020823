@@ -148,7 +148,7 @@
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCollectionViewCell" id="VVe-y0-DzT" customClass="MovieCollectionViewCell" customModule="MovieDB" customModuleProvider="target">
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="MovieCollectionViewCell" id="VVe-y0-DzT" customClass="MovieCollectionViewCell" customModule="MovieDB" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="10" width="130" height="130"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="363-FS-gOp">
@@ -157,12 +157,16 @@
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thewitcher" translatesAutoresizingMaskIntoConstraints="NO" id="7DA-VH-Pvx">
                                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="130" id="2uX-gt-qqC"/>
+                                                                            <constraint firstAttribute="height" constant="130" id="vlm-wf-Uhf"/>
+                                                                        </constraints>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="7DA-VH-Pvx" secondAttribute="trailing" id="GoA-H3-mCh"/>
                                                                     <constraint firstItem="7DA-VH-Pvx" firstAttribute="top" secondItem="363-FS-gOp" secondAttribute="top" id="WH6-CI-ro2"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="7DA-VH-Pvx" secondAttribute="bottom" id="Ws6-cw-7cZ"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="7DA-VH-Pvx" secondAttribute="trailing" id="YCG-8O-qYy"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="7DA-VH-Pvx" secondAttribute="bottom" id="dRY-uF-8vQ"/>
                                                                     <constraint firstItem="7DA-VH-Pvx" firstAttribute="leading" secondItem="363-FS-gOp" secondAttribute="leading" id="yMP-nM-NHs"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
