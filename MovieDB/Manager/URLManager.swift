@@ -66,4 +66,8 @@ class URLManager {
         request.httpMethod = "GET"
         request.allHTTPHeaderFields = headers
     }
+    
+    static func getImageURL(imageEndPoint: String) -> URL? {
+        return URL(string: Constants.imageBaseURL + imageEndPoint)
+    }
 }

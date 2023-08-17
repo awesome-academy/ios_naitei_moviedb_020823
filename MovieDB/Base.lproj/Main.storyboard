@@ -158,8 +158,8 @@
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thewitcher" translatesAutoresizingMaskIntoConstraints="NO" id="7DA-VH-Pvx">
                                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="130" id="2uX-gt-qqC"/>
-                                                                            <constraint firstAttribute="height" constant="130" id="vlm-wf-Uhf"/>
+                                                                            <constraint firstAttribute="width" constant="130" id="26M-eQ-Yq7"/>
+                                                                            <constraint firstAttribute="height" constant="130" id="cD1-hY-VQC"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                 </subviews>
@@ -196,10 +196,9 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eR1-h7-PYu">
-                                <rect key="frame" x="97" y="108" width="73" height="32"/>
+                                <rect key="frame" x="97" y="108" width="73.666666666666686" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="4Hg-nh-5b6"/>
-                                    <constraint firstAttribute="width" constant="73" id="xvG-pL-4o3"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -207,11 +206,8 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNG-X6-SLv">
-                                <rect key="frame" x="195" y="108" width="75" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="pvn-XC-k3p"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNG-X6-SLv">
+                                <rect key="frame" x="195.66666666666666" y="108" width="73.333333333333343" height="32"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="My List">
@@ -232,6 +228,7 @@
                             <constraint firstItem="B2r-80-uCu" firstAttribute="leading" secondItem="kf8-m6-9KZ" secondAttribute="leading" constant="26" id="cJi-Ne-NsL"/>
                             <constraint firstItem="uXC-Ok-UB6" firstAttribute="bottom" secondItem="hXd-fb-Ddr" secondAttribute="bottom" id="jYc-O2-NMo"/>
                             <constraint firstItem="RNG-X6-SLv" firstAttribute="top" secondItem="uXC-Ok-UB6" secondAttribute="top" constant="5" id="mU1-ha-o8j"/>
+                            <constraint firstItem="uXC-Ok-UB6" firstAttribute="trailing" secondItem="RNG-X6-SLv" secondAttribute="trailing" constant="124" id="t4N-Ko-F3R"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="9Ot-OT-hWC"/>

@@ -2,6 +2,7 @@ import UIKit
 
 class DetailScreenViewController: UIViewController {
     @IBOutlet private weak var backButton: UIButton!
+    
     private var movie: Movie?
     
     override func viewDidLoad() {
