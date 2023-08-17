@@ -119,7 +119,7 @@ extension HomeViewController: MovieTableViewCellDelegate {
     func didSelectMovie(_ movie: Movie) {
             let storyBoard = UIStoryboard(name: "DetailScreen", bundle: nil)
             guard let detailScreen = storyBoard.instantiateViewController(withIdentifier: "DetailScreenViewController") as? DetailScreenViewController else { return }
-            detailScreen.bindData(movie: movie)
+        detailScreen.bindData(movie: movie, sender: SendingAddress.homeScreen)
             self.navigationController?.pushViewController(detailScreen, animated: true)
         }
 }

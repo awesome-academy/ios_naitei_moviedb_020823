@@ -11,6 +11,7 @@ final class MovieCollectionViewCell: UICollectionViewCell {
                 DispatchQueue.main.async { [weak self] in
                         guard let self = self else { return }
                         self.posterImageView.image = image
+                        self.posterImageView.roundedCorners()
                     }
             }
     }

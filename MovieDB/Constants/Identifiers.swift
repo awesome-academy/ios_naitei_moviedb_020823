@@ -4,6 +4,7 @@ enum Identifiers {
     case tableViewCell
     case collectionViewCell
     case searchTableViewCell
+    case noResultCell
     
     func getIdentifier() -> String {
         switch self {
@@ -13,6 +14,8 @@ enum Identifiers {
             return "MovieCollectionViewCell"
         case .searchTableViewCell:
             return "SearchTableViewCell"
+        case .noResultCell:
+            return "NoResultCell"
         }
     }
 }

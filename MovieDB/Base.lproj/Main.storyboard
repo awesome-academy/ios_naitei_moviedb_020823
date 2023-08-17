@@ -46,6 +46,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jWa-5c-Rdr">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="xww-Co-27k" kind="relationship" relationship="rootViewController" id="4DV-zB-dpD"/>
@@ -64,7 +65,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="h2S-2o-SIb">
-                                <rect key="frame" x="30" y="48" width="333" height="56"/>
+                                <rect key="frame" x="15" y="103" width="363" height="56"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -72,7 +74,7 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IPA-fg-UBu">
-                                <rect key="frame" x="0.0" y="134" width="393" height="635"/>
+                                <rect key="frame" x="0.0" y="209" width="393" height="560"/>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <color key="separatorColor" systemColor="labelColor"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="labelColor"/>
@@ -88,8 +90,8 @@
                                                     <rect key="frame" x="20" y="5" width="128" height="100"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfX-mz-AlH">
-                                                    <rect key="frame" x="178" y="45" width="89.666666666666686" height="15"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <rect key="frame" x="178" y="45" width="88" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -117,17 +119,26 @@
                                     <outlet property="delegate" destination="xww-Co-27k" id="E1C-A7-WDL"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtp-sa-jKx">
+                                <rect key="frame" x="18" y="177" width="160" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BoB-1H-NqU"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
+                            <constraint firstItem="jtp-sa-jKx" firstAttribute="top" secondItem="h2S-2o-SIb" secondAttribute="bottom" constant="18" id="22z-lH-2Gm"/>
+                            <constraint firstItem="jtp-sa-jKx" firstAttribute="leading" secondItem="BoB-1H-NqU" secondAttribute="leading" constant="18" id="6jR-hT-z93"/>
                             <constraint firstItem="BoB-1H-NqU" firstAttribute="trailing" secondItem="IPA-fg-UBu" secondAttribute="trailing" id="DLQ-fb-Kqt"/>
                             <constraint firstItem="BoB-1H-NqU" firstAttribute="bottom" secondItem="IPA-fg-UBu" secondAttribute="bottom" id="EpH-E9-aEt"/>
                             <constraint firstItem="IPA-fg-UBu" firstAttribute="leading" secondItem="BoB-1H-NqU" secondAttribute="leading" id="K0L-JE-Jnp"/>
-                            <constraint firstItem="BoB-1H-NqU" firstAttribute="trailing" secondItem="h2S-2o-SIb" secondAttribute="trailing" constant="30" id="Shl-eR-FL1"/>
-                            <constraint firstItem="IPA-fg-UBu" firstAttribute="top" secondItem="h2S-2o-SIb" secondAttribute="bottom" constant="30" id="bBc-Do-Lz1"/>
-                            <constraint firstItem="h2S-2o-SIb" firstAttribute="top" secondItem="PDL-24-G5b" secondAttribute="top" constant="48" id="kq4-1S-AIX"/>
-                            <constraint firstItem="h2S-2o-SIb" firstAttribute="leading" secondItem="BoB-1H-NqU" secondAttribute="leading" constant="30" id="pcL-K8-iBZ"/>
+                            <constraint firstItem="BoB-1H-NqU" firstAttribute="trailing" secondItem="h2S-2o-SIb" secondAttribute="trailing" constant="15" id="Shl-eR-FL1"/>
+                            <constraint firstItem="BoB-1H-NqU" firstAttribute="trailing" secondItem="jtp-sa-jKx" secondAttribute="trailing" constant="215" id="YHU-O6-WYX"/>
+                            <constraint firstItem="IPA-fg-UBu" firstAttribute="top" secondItem="h2S-2o-SIb" secondAttribute="bottom" constant="50" id="bBc-Do-Lz1"/>
+                            <constraint firstItem="h2S-2o-SIb" firstAttribute="leading" secondItem="BoB-1H-NqU" secondAttribute="leading" constant="15" id="pcL-K8-iBZ"/>
+                            <constraint firstItem="h2S-2o-SIb" firstAttribute="top" secondItem="PDL-24-G5b" secondAttribute="topMargin" id="sfF-h3-Ow7"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="b97-ne-czr"/>
