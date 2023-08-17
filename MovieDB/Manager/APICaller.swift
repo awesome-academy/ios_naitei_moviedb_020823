@@ -55,13 +55,13 @@ class APICaller {
         getData(url: url as URLRequest, completion: completion)
     }
     
-    func search( with searchKey: String, completion: @escaping (Result<[Movie], Error>) -> Void) {
+    func search(searchKey: String, completion: @escaping (Result<[Movie], Error>) -> Void) {
         guard let query = searchKey.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
         guard let url = URLManager.getURL(for: query) else { return }
         getData(url: url as URLRequest, completion: completion)
     }
     
-    func getTrailer( with searchKey: String, completion: @escaping (Result<TrailerVideo, Error>) -> Void) {
+    func getTrailer(searchKey: String, completion: @escaping (Result<TrailerVideo, Error>) -> Void) {
         guard let query = searchKey.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {return}
         guard let url = URLManager.getYoutubeURL(for: query) else {return}
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) {data, _, error in
