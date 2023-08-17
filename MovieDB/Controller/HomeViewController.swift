@@ -12,6 +12,7 @@ final class HomeViewController: UIViewController {
     private var discoverMovies = [Movie]()
     private var movies = [[Movie]]()
     private var sections = HomeSections.allCases
+    private var serviceProvider = APICaller.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +20,71 @@ final class HomeViewController: UIViewController {
     }
     
     private func initMovies() {
+            var completedRequests = 0
+        
+            for type in sections {
+                getMovies(type: type) { [weak self] in
+                    completedRequests += 1
+                    if completedRequests == self?.sections.count {
+                        self?.finalizeMoviesInitialization()
+                    }
+                }
+            }
+    }
+    
+    func getMovies(type: HomeSections, completion: @escaping () -> Void) {
+        let movieFetchHandler: (Result<[Movie], Error>) -> Void = { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let movies):
+                switch type {
+                case .popular:
+                    self.popularMovies = movies
+                case .trending:
+                    self.trendingMovies = movies
+                case .topRated:
+                    self.topRatedMovies = movies
+                case .discover:
+                    self.discoverMovies = movies
+                }
+            case .failure(let error):
+                switch type {
+                case .popular:
+                    print("Error fetching popular movies: \(error.localizedDescription)")
+                case .trending:
+                    print("Error fetching trending movies: \(error.localizedDescription)")
+                case .topRated:
+                    print("Error fetching top rated movies: \(error.localizedDescription)")
+                case .discover:
+                    print("Error fetching discover movies: \(error.localizedDescription)")
+                }
+            }
+            
+            completion()
+        }
+        
+        switch type {
+        case .popular:
+            serviceProvider.getPopularMovies(completion: movieFetchHandler)
+        case .trending:
+            serviceProvider.getTrendingMovies(completion: movieFetchHandler)
+        case .topRated:
+            serviceProvider.getTopRatedMovies(completion: movieFetchHandler)
+        case .discover:
+            serviceProvider.getDiscoverMovies(completion: movieFetchHandler)
+        }
+    }
+    
+    private func finalizeMoviesInitialization() {
         movies.append(popularMovies)
         movies.append(trendingMovies)
         movies.append(topRatedMovies)
         movies.append(discoverMovies)
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.movieTableView.reloadData()
+        }
     }
 }
 
@@ -40,11 +102,16 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = movieTableView.dequeueReusableCell(withIdentifier: Identifiers.tableViewCell.getIdentifier() , for: indexPath) as? MovieTableViewCell else { return MovieTableViewCell() }
-        cell.delegate = self
-        cell.setTag(tag: indexPath.section)
-        cell.bindData(movies: movies[indexPath.section])
-        return cell
+        if movies.isEmpty {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.tableViewCell.getIdentifier(), for: indexPath) as? MovieTableViewCell else { return MovieTableViewCell() }
+                return cell
+            } else {
+                guard let cell = movieTableView.dequeueReusableCell(withIdentifier: Identifiers.tableViewCell.getIdentifier(), for: indexPath) as? MovieTableViewCell else { return MovieTableViewCell() }
+                cell.delegate = self
+                cell.setTag(tag: indexPath.section)
+                cell.setTableViewCell(movies: movies[indexPath.section])
+                return cell
+            }
     }
 }
 

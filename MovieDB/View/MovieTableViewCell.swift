@@ -8,6 +8,7 @@ final class MovieTableViewCell: UITableViewCell {
     @IBOutlet private weak var movieCollectionView: UICollectionView!
     
     private var movies = [Movie]()
+    
     weak var delegate: MovieTableViewCellDelegate?
     
     override func awakeFromNib() {
@@ -24,8 +25,9 @@ final class MovieTableViewCell: UITableViewCell {
         movieCollectionView.tag = tag
     }
     
-    func bindData(movies: [Movie]) {
+    func setTableViewCell(movies: [Movie]) {
         self.movies = movies
+        self.movieCollectionView.reloadData()
     }
 }
 
@@ -36,6 +38,7 @@ extension MovieTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = movieCollectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.collectionViewCell.getIdentifier(), for: indexPath) as? MovieCollectionViewCell else { return UICollectionViewCell() }
+        cell.setCollectionViewCell(movie: movies[indexPath.item])
         return cell
     }
 }
