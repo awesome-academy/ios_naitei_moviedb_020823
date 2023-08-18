@@ -43,6 +43,7 @@ extension SearchViewController: UITableViewDelegate {
         let storyBoard = UIStoryboard(name: "DetailScreen", bundle: nil)
         guard let detailScreen = storyBoard.instantiateViewController(withIdentifier: "DetailScreenViewController") as? DetailScreenViewController else { return }
         detailScreen.bindData(movie: movies[indexPath.row], sender: SendingAddress.searchScreen)
+        detailScreen.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailScreen, animated: true)
     }
 }
