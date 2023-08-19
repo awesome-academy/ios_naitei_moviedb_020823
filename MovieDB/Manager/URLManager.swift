@@ -54,6 +54,22 @@ class URLManager {
             return request
     }
     
+    static func getURL(movieID: Int) -> NSMutableURLRequest? {
+        let request = NSMutableURLRequest(url: NSURL(string: Constants.baseURL + EndPoints.baseSimilarEndPoint + "\(movieID)" + EndPoints.finalSimilarEndPoint + Filters.basicFilter)! as URL,
+            cachePolicy: .useProtocolCachePolicy,
+            timeoutInterval: 10.0)
+          initRequest(request: request)
+          return request
+    }
+    
+    static func getCreditURL(movieID: Int) -> NSMutableURLRequest? {
+        let request = NSMutableURLRequest(url: NSURL(string: Constants.baseURL + EndPoints.baseCreditsEndPoint + "\(movieID)" + EndPoints.finalCreditsEndPoint + Filters.basicFilter)! as URL,
+            cachePolicy: .useProtocolCachePolicy,
+            timeoutInterval: 10.0)
+          initRequest(request: request)
+          return request
+    }
+    
     static func getYoutubeURL(for searchKey: String) -> URL? {
         return URL(string: Constants.youtubeBaseURL + EndPoints.youtubeEndPoint + searchKey + "&key=" + keys.youtubeApiKey)
     }

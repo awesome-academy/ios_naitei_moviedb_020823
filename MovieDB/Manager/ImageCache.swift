@@ -7,7 +7,7 @@ class ImageCache {
 
     private init() {}
 
-    func getMovieImage(endPoint: String, completion: @escaping (UIImage?) -> Void) {
+    func getImage(endPoint: String, completion: @escaping (UIImage?) -> Void) {
         guard let url = URLManager.getImageURL(imageEndPoint: endPoint) else { return }
         if let cachedImage = cache.object(forKey: url.absoluteString as NSString) {
             completion(cachedImage)

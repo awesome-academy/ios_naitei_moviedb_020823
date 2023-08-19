@@ -75,4 +75,40 @@ class APICaller {
         }
         task.resume()
     }
+    
+    func getSimilarMovies(movieID: Int, completion: @escaping (Result<[Movie], Error>) -> Void) {
+        guard let url = URLManager.getURL(movieID: movieID) else { return }
+        getData(url: url as URLRequest, completion: completion)
+    }
+    
+    func getMovieActors(movieID: Int, completion: @escaping (Result<[Actor], Error>) -> Void) {
+        guard let url = URLManager.getCreditURL(movieID: movieID) else { return }
+        getActorData(url: url as URLRequest, completion: completion)
+    }
+    
+    func getActorData(url: URLRequest, completion: @escaping (Result<[Actor], Error>) -> Void) {
+        let task = URLSession.shared.dataTask(with: url) {data, response, error in
+            if let error = error {
+                       print("Failed to get Data from URL: \(error)")
+                       completion(.failure(APIError.failedToGetData))
+                       return
+                   }
+            guard let data = data, let httpResponse = response as? HTTPURLResponse else {
+                print("Failed to get Data from URL: No data or invalid response")
+                completion(.failure(APIError.failedToGetData))
+                return }
+            guard (200...299).contains(httpResponse.statusCode) else {
+                print("HTTP request error: \(httpResponse.statusCode)")
+                completion(.failure(APIError.httpRequestFailed(httpResponse.statusCode)))
+                return }
+            do {
+                let results = try JSONDecoder().decode(ActorResponse.self, from: data)
+                completion(.success(results.cast))
+            } catch {
+                print("Failed to decode JSON: \(error)")
+                completion(.failure(APIError.failedToDecodeData))
+            }
+        }
+        task.resume()
+    }
 }
