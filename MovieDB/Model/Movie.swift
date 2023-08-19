@@ -14,18 +14,32 @@ struct Movie: Codable {
     let voteCount: Int
     
     enum CodingKeys: String, CodingKey {
-        case id = "id"
+        case id
         case mediaType = "media_type"
         case originalLanguage = "original_language"
         case originalTitle = "original_title"
-        case overview = "overview"
-        case popularity = "popularity"
+        case overview
+        case popularity 
         case posterPath = "poster_path"
         case releaseDate = "release_date"
-        case title = "title"
+        case title
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
+    
+    init() {
+            id = 0
+            mediaType = ""
+            originalLanguage = ""
+            originalTitle = ""
+            overview = ""
+            popularity = 0.0
+            posterPath = ""
+            releaseDate = ""
+            title = ""
+            voteAverage = 0.0
+            voteCount = 0
+        }
 }
 
 struct MovieResponse: Codable {

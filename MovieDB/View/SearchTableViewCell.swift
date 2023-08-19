@@ -23,7 +23,7 @@ final class SearchTableViewCell: UITableViewCell {
     func setSearchTableViewCell(movie: Movie) {
         self.movie = movie
         self.movieTitle.text = movie.originalTitle
-        imageProvider.getMovieImage(endPoint: movie.posterPath ?? "") { [weak self] image in
+        imageProvider.getImage(endPoint: movie.posterPath ?? "") { [weak self] image in
                 guard let self = self, let image = image else { return }
                 DispatchQueue.main.async { [weak self] in
                         guard let self = self else { return }

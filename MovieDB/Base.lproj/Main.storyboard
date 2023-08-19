@@ -43,7 +43,7 @@
             <objects>
                 <navigationController id="GNp-Gm-1nS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="0Ux-vL-ryX"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jWa-5c-Rdr">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="jWa-5c-Rdr">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,7 +86,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thewitcher" translatesAutoresizingMaskIntoConstraints="NO" id="0eZ-mC-eHm">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0eZ-mC-eHm">
                                                     <rect key="frame" x="20" y="5" width="128" height="100"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfX-mz-AlH">
@@ -227,8 +227,9 @@
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Bv7-jP-6oc">
                                                     <rect key="frame" x="0.0" y="0.0" width="393" height="150"/>
                                                     <color key="backgroundColor" systemColor="labelColor"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1s0-yh-0ee">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1s0-yh-0ee">
                                                         <size key="itemSize" width="130" height="130"/>
+                                                        <size key="estimatedItemSize" width="130" height="130"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -241,18 +242,18 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thewitcher" translatesAutoresizingMaskIntoConstraints="NO" id="7DA-VH-Pvx">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7DA-VH-Pvx">
                                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="130" id="26M-eQ-Yq7"/>
-                                                                            <constraint firstAttribute="height" constant="130" id="cD1-hY-VQC"/>
+                                                                            <constraint firstAttribute="height" constant="130" id="tYO-ir-gMa"/>
+                                                                            <constraint firstAttribute="width" constant="130" id="wsq-zq-IZo"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="7DA-VH-Pvx" secondAttribute="trailing" id="GoA-H3-mCh"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="7DA-VH-Pvx" secondAttribute="trailing" id="NJo-63-B3s"/>
                                                                     <constraint firstItem="7DA-VH-Pvx" firstAttribute="top" secondItem="363-FS-gOp" secondAttribute="top" id="WH6-CI-ro2"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="7DA-VH-Pvx" secondAttribute="bottom" id="dRY-uF-8vQ"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="7DA-VH-Pvx" secondAttribute="bottom" id="rNc-BF-GCd"/>
                                                                     <constraint firstItem="7DA-VH-Pvx" firstAttribute="leading" secondItem="363-FS-gOp" secondAttribute="leading" id="yMP-nM-NHs"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
@@ -283,9 +284,6 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eR1-h7-PYu">
                                 <rect key="frame" x="97" y="108" width="73.666666666666686" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="4Hg-nh-5b6"/>
-                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Movies">
@@ -359,7 +357,6 @@
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="play.rectangle.on.rectangle" catalog="system" width="128" height="98"/>
-        <image name="thewitcher" width="1500" height="2222"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
