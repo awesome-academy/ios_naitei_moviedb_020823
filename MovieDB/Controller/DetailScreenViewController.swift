@@ -116,5 +116,5 @@ extension DetailScreenViewController: MovieTableViewCellDelegate {
         detailScreen.bindData(movie: movie, sender: senderAddress ?? SendingAddress.homeScreen)
         detailScreen.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailScreen, animated: true)
-        }
+    }
 }

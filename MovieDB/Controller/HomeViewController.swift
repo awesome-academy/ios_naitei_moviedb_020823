@@ -86,6 +86,13 @@ final class HomeViewController: UIViewController {
             self.movieTableView.reloadData()
         }
     }
+    
+    @IBAction private func myListButtonTapped() {
+        let storyBoard = UIStoryboard(name: "MyListScreen", bundle: nil)
+        guard let myListScreen = storyBoard.instantiateViewController(withIdentifier: "MyListViewController") as? MyListViewController else { return }
+        myListScreen.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(myListScreen, animated: true)
+        }
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -117,10 +124,10 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: MovieTableViewCellDelegate {
     func didSelectMovie(_ movie: Movie) {
-            let storyBoard = UIStoryboard(name: "DetailScreen", bundle: nil)
-            guard let detailScreen = storyBoard.instantiateViewController(withIdentifier: "DetailScreenViewController") as? DetailScreenViewController else { return }
+        let storyBoard = UIStoryboard(name: "DetailScreen", bundle: nil)
+        guard let detailScreen = storyBoard.instantiateViewController(withIdentifier: "DetailScreenViewController") as? DetailScreenViewController else { return }
         detailScreen.bindData(movie: movie, sender: SendingAddress.homeScreen)
         detailScreen.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailScreen, animated: true)
-        }
+    }
 }

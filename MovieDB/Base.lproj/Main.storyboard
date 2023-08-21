@@ -282,37 +282,29 @@
                                     <outlet property="delegate" destination="XWl-1M-NpD" id="oqr-Gt-yhW"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eR1-h7-PYu">
-                                <rect key="frame" x="97" y="108" width="73.666666666666686" height="32"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Movies">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
-                                </buttonConfiguration>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNG-X6-SLv">
-                                <rect key="frame" x="195.66666666666666" y="108" width="73.333333333333343" height="32"/>
+                                <rect key="frame" x="87" y="105" width="76.333333333333314" height="33.333333333333343"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="My List">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="myListButtonTapped" destination="XWl-1M-NpD" eventType="touchUpInside" id="6Gc-mn-EWd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uXC-Ok-UB6"/>
                         <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
-                            <constraint firstItem="hXd-fb-Ddr" firstAttribute="top" secondItem="eR1-h7-PYu" secondAttribute="bottom" constant="43" id="2e5-Dp-Hcx"/>
-                            <constraint firstItem="eR1-h7-PYu" firstAttribute="top" secondItem="uXC-Ok-UB6" secondAttribute="top" constant="5" id="4Hi-Rs-0kT"/>
+                            <constraint firstItem="RNG-X6-SLv" firstAttribute="leading" secondItem="B2r-80-uCu" secondAttribute="trailing" constant="20" id="4PE-KK-r3S"/>
                             <constraint firstAttribute="trailing" secondItem="hXd-fb-Ddr" secondAttribute="trailing" id="BB4-xI-u4T"/>
-                            <constraint firstItem="RNG-X6-SLv" firstAttribute="leading" secondItem="eR1-h7-PYu" secondAttribute="trailing" constant="25" id="GOF-wt-wcB"/>
                             <constraint firstItem="hXd-fb-Ddr" firstAttribute="leading" secondItem="uXC-Ok-UB6" secondAttribute="leading" id="KPB-QX-Gft"/>
-                            <constraint firstItem="eR1-h7-PYu" firstAttribute="leading" secondItem="B2r-80-uCu" secondAttribute="trailing" constant="30" id="Ods-41-cKm"/>
                             <constraint firstItem="B2r-80-uCu" firstAttribute="top" secondItem="kf8-m6-9KZ" secondAttribute="topMargin" id="b4v-vS-fOL"/>
                             <constraint firstItem="B2r-80-uCu" firstAttribute="leading" secondItem="kf8-m6-9KZ" secondAttribute="leading" constant="26" id="cJi-Ne-NsL"/>
                             <constraint firstItem="uXC-Ok-UB6" firstAttribute="bottom" secondItem="hXd-fb-Ddr" secondAttribute="bottom" id="jYc-O2-NMo"/>
-                            <constraint firstItem="RNG-X6-SLv" firstAttribute="top" secondItem="uXC-Ok-UB6" secondAttribute="top" constant="5" id="mU1-ha-o8j"/>
-                            <constraint firstItem="uXC-Ok-UB6" firstAttribute="trailing" secondItem="RNG-X6-SLv" secondAttribute="trailing" constant="124" id="t4N-Ko-F3R"/>
+                            <constraint firstItem="RNG-X6-SLv" firstAttribute="top" secondItem="uXC-Ok-UB6" secondAttribute="top" constant="2" id="mU1-ha-o8j"/>
+                            <constraint firstItem="hXd-fb-Ddr" firstAttribute="top" secondItem="B2r-80-uCu" secondAttribute="bottom" constant="41" id="q4M-aC-IX2"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="9Ot-OT-hWC"/>
@@ -322,7 +314,6 @@
                     <connections>
                         <outlet property="logoImageView" destination="B2r-80-uCu" id="Efv-2I-EBy"/>
                         <outlet property="movieTableView" destination="hXd-fb-Ddr" id="xvu-MP-Abr"/>
-                        <outlet property="moviesButton" destination="eR1-h7-PYu" id="KVk-S8-oAs"/>
                         <outlet property="myListButton" destination="RNG-X6-SLv" id="iqj-PP-rtD"/>
                     </connections>
                 </viewController>
