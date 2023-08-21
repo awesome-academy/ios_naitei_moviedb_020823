@@ -111,4 +111,9 @@ class APICaller {
         }
         task.resume()
     }
+    
+    func getVideos(movieID: Int, completion: @escaping (Result<[Actor], Error>) -> Void) {
+        guard let url = URLManager.getCreditURL(movieID: movieID) else { return }
+        getActorData(url: url as URLRequest, completion: completion)
+    }
 }

@@ -1,4 +1,6 @@
 import UIKit
+import AVKit
+import youtube_ios_player_helper
 
 final class DetailScreenViewController: UIViewController {
     @IBOutlet private weak var backButton: UIButton!
@@ -8,12 +10,14 @@ final class DetailScreenViewController: UIViewController {
     @IBOutlet private weak var clearAllButton: UIButton!
     @IBOutlet private weak var similarTableView: UITableView!
     @IBOutlet private weak var moviePosterImage: UIImageView!
+    @IBOutlet private weak var playerView: YTPlayerView!
     
     private var movie: Movie?
     private var senderAddress: SendingAddress?
     private var imageProvider = ImageCache.shared
     private var serviceProvider = APICaller.shared
     private var similarMovies = [Movie]()
+    private var playerViewController = AVPlayerViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,5 +120,17 @@ extension DetailScreenViewController: MovieTableViewCellDelegate {
         detailScreen.bindData(movie: movie, sender: senderAddress ?? SendingAddress.homeScreen)
         detailScreen.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailScreen, animated: true)
+    }
+}
+
+extension DetailScreenViewController: YTPlayerViewDelegate {
+    @IBAction private func playTrailerButtonTapped() {
+        moviePosterImage.isHidden = true
+        playerView?.delegate = self
+        playerView.load(withVideoId: "5ELi_mdU2q8", playerVars: ["playsinline" : 1])
+    }
+    
+    func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
+        playerView.playVideo()
     }
 }
