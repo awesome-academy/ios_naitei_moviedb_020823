@@ -21,6 +21,8 @@
 		E42AA3712A8E090900212750 /* SendingAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42AA3702A8E090900212750 /* SendingAddress.swift */; };
 		E42D2DE92A8B3670007E7C15 /* DetailScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E42D2DE82A8B3670007E7C15 /* DetailScreen.storyboard */; };
 		E42D2DED2A8B36CA007E7C15 /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42D2DEC2A8B36CA007E7C15 /* DetailScreenViewController.swift */; };
+		E4550D2A2A93010300B6FD7F /* MyListScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4550D292A93010300B6FD7F /* MyListScreen.storyboard */; };
+		E4550D2E2A93085200B6FD7F /* MyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4550D2D2A93085200B6FD7F /* MyListViewController.swift */; };
 		E457463C2A7CA02900945CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457463B2A7CA02900945CE8 /* AppDelegate.swift */; };
 		E457463E2A7CA02900945CE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E457463D2A7CA02900945CE8 /* SceneDelegate.swift */; };
 		E45746432A7CA02900945CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45746412A7CA02900945CE8 /* Main.storyboard */; };
@@ -59,6 +61,8 @@
 		E42AA3702A8E090900212750 /* SendingAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingAddress.swift; sourceTree = "<group>"; };
 		E42D2DE82A8B3670007E7C15 /* DetailScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailScreen.storyboard; sourceTree = "<group>"; };
 		E42D2DEC2A8B36CA007E7C15 /* DetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenViewController.swift; sourceTree = "<group>"; };
+		E4550D292A93010300B6FD7F /* MyListScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyListScreen.storyboard; sourceTree = "<group>"; };
+		E4550D2D2A93085200B6FD7F /* MyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListViewController.swift; sourceTree = "<group>"; };
 		E45746382A7CA02900945CE8 /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E457463B2A7CA02900945CE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E457463D2A7CA02900945CE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				E401A9752A8372DC001000E2 /* MovieCollectionViewCell.swift */,
 				E42D2DE82A8B3670007E7C15 /* DetailScreen.storyboard */,
 				E40910CC2A8F563D00764F1B /* Info.storyboard */,
+				E4550D292A93010300B6FD7F /* MyListScreen.storyboard */,
 				E42AA36C2A8DF43F00212750 /* SearchTableViewCell.swift */,
 				E4ED32492A8E3E4E005A5201 /* NoResultCell.xib */,
 				E4ED324B2A8E43C1005A5201 /* NoResultCell.swift */,
@@ -172,6 +177,7 @@
 				E42D2DEC2A8B36CA007E7C15 /* DetailScreenViewController.swift */,
 				E42AA36E2A8DF47900212750 /* SearchViewController.swift */,
 				E40910CA2A8F55BB00764F1B /* InfoViewController.swift */,
+				E4550D2D2A93085200B6FD7F /* MyListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -272,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4550D2A2A93010300B6FD7F /* MyListScreen.storyboard in Resources */,
 				E4DC512A2A81D4BF0074BA89 /* Keys.plist in Resources */,
 				E40910CD2A8F563D00764F1B /* Info.storyboard in Resources */,
 				E457464B2A7CA02A00945CE8 /* LaunchScreen.storyboard in Resources */,
@@ -300,6 +307,7 @@
 				E401A9742A8372C0001000E2 /* MovieTableViewCell.swift in Sources */,
 				E4ED324C2A8E43C1005A5201 /* NoResultCell.swift in Sources */,
 				E40B17862A80EC7A00D8579D /* Keys.swift in Sources */,
+				E4550D2E2A93085200B6FD7F /* MyListViewController.swift in Sources */,
 				E42AA36D2A8DF43F00212750 /* SearchTableViewCell.swift in Sources */,
 				E49A49A92A8FCD4500CD091B /* Actor.swift in Sources */,
 				E4ED32502A8E82E8005A5201 /* UILabelExtension.swift in Sources */,
