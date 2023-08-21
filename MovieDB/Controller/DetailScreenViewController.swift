@@ -13,6 +13,7 @@ final class DetailScreenViewController: UIViewController {
     @IBOutlet private weak var playerView: YTPlayerView!
     
     private var movie: Movie?
+    private var videos = [MovieDBVideo]()
     private var senderAddress: SendingAddress?
     private var imageProvider = ImageCache.shared
     private var serviceProvider = APICaller.shared
@@ -48,6 +49,16 @@ final class DetailScreenViewController: UIViewController {
                     guard let self = self else { return }
                     self.similarTableView.reloadData()
                 }
+            case .failure(let error):
+                print("Error fetching search movies: \(error.localizedDescription)")
+            }
+        }
+        
+        serviceProvider.getVideos(movieID: movie?.id ?? Constants.zero) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let videos):
+                self.videos = videos
             case .failure(let error):
                 print("Error fetching search movies: \(error.localizedDescription)")
             }
@@ -125,12 +136,14 @@ extension DetailScreenViewController: MovieTableViewCellDelegate {
 
 extension DetailScreenViewController: YTPlayerViewDelegate {
     @IBAction private func playTrailerButtonTapped() {
-        moviePosterImage.isHidden = true
         playerView?.delegate = self
-        playerView.load(withVideoId: "5ELi_mdU2q8", playerVars: ["playsinline" : 1])
+            if let video = videos.first(where: { $0.type == "Trailer" }) {
+                playerView.load(withVideoId: video.key, playerVars: ["playsinline": 1])
+            }
     }
     
     func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
         playerView.playVideo()
+        moviePosterImage.isHidden = true
     }
 }

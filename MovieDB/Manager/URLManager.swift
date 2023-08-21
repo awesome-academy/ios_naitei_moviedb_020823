@@ -75,6 +75,7 @@ class URLManager {
             cachePolicy: .useProtocolCachePolicy,
             timeoutInterval: 10.0)
           initRequest(request: request)
+        print(Constants.baseURL + EndPoints.commonEndPoint + "\(movieID)" + EndPoints.videoFinalEndPoint + Filters.baseFilter)
           return request
     }
     

@@ -21,3 +21,7 @@ struct MovieDBVideo: Codable {
         case id
     }
 }
+
+struct VideoResponse: Codable {
+    let results: [MovieDBVideo]
+}
