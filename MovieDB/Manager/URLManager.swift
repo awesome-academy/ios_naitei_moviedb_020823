@@ -55,7 +55,7 @@ class URLManager {
     }
     
     static func getURL(movieID: Int) -> NSMutableURLRequest? {
-        let request = NSMutableURLRequest(url: NSURL(string: Constants.baseURL + EndPoints.baseSimilarEndPoint + "\(movieID)" + EndPoints.finalSimilarEndPoint + Filters.basicFilter)! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: Constants.baseURL + EndPoints.commonEndPoint + "\(movieID)" + EndPoints.finalSimilarEndPoint + Filters.basicFilter)! as URL,
             cachePolicy: .useProtocolCachePolicy,
             timeoutInterval: 10.0)
           initRequest(request: request)
@@ -63,15 +63,23 @@ class URLManager {
     }
     
     static func getCreditURL(movieID: Int) -> NSMutableURLRequest? {
-        let request = NSMutableURLRequest(url: NSURL(string: Constants.baseURL + EndPoints.baseCreditsEndPoint + "\(movieID)" + EndPoints.finalCreditsEndPoint + Filters.basicFilter)! as URL,
+        let request = NSMutableURLRequest(url: NSURL(string: Constants.baseURL + EndPoints.commonEndPoint + "\(movieID)" + EndPoints.finalCreditsEndPoint + Filters.basicFilter)! as URL,
             cachePolicy: .useProtocolCachePolicy,
             timeoutInterval: 10.0)
           initRequest(request: request)
           return request
     }
     
-    static func getYoutubeURL(for searchKey: String) -> URL? {
-        return URL(string: Constants.youtubeBaseURL + EndPoints.youtubeEndPoint + searchKey + "&key=" + keys.youtubeApiKey)
+    static func getVideoURL(movieID: Int) -> NSMutableURLRequest? {
+        let request = NSMutableURLRequest(url: NSURL(string: Constants.baseURL + EndPoints.commonEndPoint + "\(movieID)" + EndPoints.videoFinalEndPoint + Filters.baseFilter)! as URL,
+            cachePolicy: .useProtocolCachePolicy,
+            timeoutInterval: 10.0)
+          initRequest(request: request)
+          return request
+    }
+    
+    static func getYoutubeURL(for id: String) -> URL? {
+        return URL(string: Constants.youtubeBaseURL + EndPoints.youtubeEndPoint + id + "&key=" + keys.youtubeApiKey)
     }
     
     static func initRequest(request: NSMutableURLRequest) {
